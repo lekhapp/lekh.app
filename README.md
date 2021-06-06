@@ -1,1 +1,0 @@
-# lekh.app
