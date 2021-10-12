@@ -5,25 +5,32 @@
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Lekh Diagram - Intelligent Diagramming | Lekh App</title>
+<title>We are using Web Assembly to build Lekh Board | Lekh App</title>
 <meta name="generator" content="Jekyll v4.2.1" />
-<meta property="og:title" content="Lekh Diagram - Intelligent Diagramming" />
+<meta property="og:title" content="We are using Web Assembly to build Lekh Board" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Intelligent whiteboarding and diagramming app." />
 <meta property="og:description" content="Intelligent whiteboarding and diagramming app." />
-<link rel="canonical" href="https://lekh.app/diagram.html" />
-<meta property="og:url" content="https://lekh.app/diagram.html" />
+<link rel="canonical" href="https://lekh.app/blogs/webassembly.html" />
+<meta property="og:url" content="https://lekh.app/blogs/webassembly.html" />
 <meta property="og:site_name" content="Lekh App" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Lekh Diagram - Intelligent Diagramming" />
+<meta property="twitter:title" content="We are using Web Assembly to build Lekh Board" />
 <script type="application/ld+json">
-{"url":"https://lekh.app/diagram.html","headline":"Lekh Diagram - Intelligent Diagramming","description":"Intelligent whiteboarding and diagramming app.","@type":"WebPage","@context":"https://schema.org"}</script>
+{"url":"https://lekh.app/blogs/webassembly.html","headline":"We are using Web Assembly to build Lekh Board","description":"Intelligent whiteboarding and diagramming app.","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link
       rel="stylesheet"
       href="/assets/css/styles.css"
     />
+    
+    <style>
+    img {
+    width: 500px;
+}
+
+    </style>
     
     <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
     <script src="/assets/js/lekh.js"></script>
@@ -283,99 +290,203 @@
 </nav>
 
       <div class=""><div class="global-container">
-  <main class="">
-  <div class="grid grid-cols-1 gap-10">
-    <div class="space-y-5 text-center">
-      <h2
-        class="text-black font-semibold lg:text-4xl text-2xl text-center leading-relaxed w-full lg:w-8/12 mx-auto font-GraphikBold"
-      >
-        Sketch Recognition <br />
-        Diagramming App
-      </h2>
+  <main>
+  <a href="/blogs.html"><i class="fa fa-angle-left"></i> Blogs</a>
+  <br /><br/>
+  <h1 class="font-GraphikBold text-3xl">We are using Web Assembly to build Lekh Board</h1>
+  <p class="text-sm italic my-2">Last Updated On: Oct 10, 2021</p>
 
-      <h4 class="text-lkhLAsh text-lg">
-        Create beautiful diagrams and UI <br />
-        wireframes with Lekh Diagram, a sketch recognition
-        <br class="hidden lg:block" />
-        diagramming app, on IOS and Android Devices
-      </h4>
+  <div class="space-y-1 font-Graphik markdown"><p>WebAssembly (or wasm) is a portable binary format for executable programs, and a corresponding textual assembly language. The main goal of WebAssembly is to enable high-performance applications on web pages. Languages such as C, C++, Rust etc can be compiled into web assembly and can be executed in a browser environment.</p>
 
-      <div class="flex items-center mt-5 justify-center">
-        <a href="https://itunes.apple.com/us/app/lekh-diagram/id576124115?mt=8">
-          <img
-            src="/assets/images/app-store-badge.svg"
-            alt="App store"
-            class="store-badge w-32 lg:w-40"
-          />
-        </a>
-        <a
-          href="https://play.google.com/store/apps/details?id=com.avabodh.lekh"
-        >
-          <img
-            src="/assets/images/google-play-badge.svg"
-            alt="google play"
-            class="store-badge w-32 lg:w-40 ml-3 lg:ml-5"
-          />
-        </a>
-      </div>
-    </div>
+<p>We are compiling our <a href="/">Lekh Board</a> C++ code into wasm and running in the browser. <a href="/">Lekh Board</a> is an intelligent collaborative whiteboard app. We released the Lekh Board a while ago and in this blog post I am sharing the experience of using the web assembly in Lekh Board.</p>
 
-    <div>
-      <div class="device-mockup ipad portrait white test-ipad ipad-height">
-        <div class="device">
-          <div class="screen">
-            <img src="/assets/images/demo-1.jpg" class="w-full h-full" alt="" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<p>I am going to explain our use case first then will explain why we use the web assembly. Then performance comparison of native code to web assembly running on Firefox and Google Chrome.</p>
 
-  <div class="py-5">
-    <div class="global-container space-y-10">
-      <div class="grid lg:grid-cols-2 gap-5 lg:gap-20 items-center">
-        <div class="space-y-2 lg:space-y-5 lg:order-3">
-          <h1 class="font-GraphikBold text-xl">Draw diagrams effortlessly</h1>
-          <p class="text-lkhLAsh">
-            The Lekh Diagram has best in class artificial intelligence to
-            recognize shapes. It recognizes your basic shapes and connection
-            lines and lets you effortlessly draw diagrams on your mobile
-            devices.
-          </p>
-        </div>
+<p> </p>
 
-        <img src="/assets/media/drawing-diagram.gif" alt="" class="w-full" />
-      </div>
+<h2 id="intro-to-lekh-board-and-high-level-architecture">Intro to Lekh Board and high level architecture</h2>
 
-      <div class="grid lg:grid-cols-2 gap-5 lg:gap-20 items-center">
-        <div class="space-y-2 lg:space-y-5 lg:order-3">
-          <h1 class="font-GraphikBold text-xl">Shape library</h1>
-          <p class="text-lkhLAsh">
-            Add shapes from the shape library to enhance your diagramming
-            experience. Using the shape library, you can draw flowcharts, block
-            diagrams, network diagrams, org charts, UI wireframes etc.
-          </p>
-        </div>
+<p>Lekh Board is a whiteboard app with the intelligence of recognizing user’s rough drawings and converting them into shapes and connection lines. It recognizes all basic shapes which you typically draw in a typical whiteboard discussion. Here is a domo of the shape recognition capability of Lekh Board.</p>
 
-        <img
-          src="/assets/media/shapelib.png"
-          alt=""
-          class="w-full lg:order-4"
-        />
-      </div>
+<p><img src="introduction/drawings.gif" alt="Shape Recognition" title="Lekh App Shape Recognition" /></p>
 
-      <div class="grid lg:grid-cols-2 gap-5 lg:gap-20 items-center">
-        <div class="space-y-2 lg:space-y-5 lg:order-3">
-          <h1 class="font-GraphikBold text-xl">Export in various formats</h1>
-          <p class="text-lkhLAsh">
-            Export your diagrams in various formats such as JPG, PNG, SVG etc
-          </p>
-        </div>
-        <img src="/assets/media/export.png" alt="" class="w-full" />
-      </div>
-    </div>
-  </div>
+<p> </p>
+
+<p>Lekh Board is built with the <a href="/diagram.html">Lekh Diagram</a> code base. I was doing the Lekh Diagram (iOS and Android) as a hobby app for quite some time and sometime ago I decided to build a collaborative version of it called Lekh Board. The core logic of Lekh Diagram is written in C++ with only dependency on the standard C++ library.</p>
+
+<p>The iOS app UI is written in Object C and consumes the C++ code directly in Object C project.
+The Android UI is written in Java and consumes the C++ code via JNI.</p>
+
+<p>This can be explained with the following diagram:</p>
+
+<p><img src="webasm/arch.png" alt="Architecture" title="Lekh App Architecture" /></p>
+
+<p>The Lekh Core does not have any platform specific code. It only uses the standard C++ library. This makes it a perfect candidate for getting converted in web assembly without any issues.</p>
+
+<p> </p>
+
+<h2 id="using-web-assembly-to-build-lekh-board">Using web assembly to build Lekh Board</h2>
+<p>To run the Lekh Core logic in browsers we had these choices:</p>
+<ul>
+  <li>Rewrite the Lekh Core in Javascript</li>
+  <li>Use web assembly or asm.js to make use of the C++ code into browser</li>
+</ul>
+
+<p>We did not want to rewrite so the only option we had was to use web assembly (or asm.js). But then we had these concerns:</p>
+<ul>
+  <li>What is the binary size that users have to download for loading the app in browsers?</li>
+  <li>Will the performance be acceptable?</li>
+  <li>Browser support</li>
+</ul>
+
+<p>Our initial exercise was to address these concerns before taking the decision to use the web assembly.  In our initial experiment, we got around 5M of the wasm file and performance was all good. Also we could run the web assembly in Firefox, Chrome and Safari. After these observations, we were pretty sure that we could use the web assembly.</p>
+
+<p> </p>
+
+<p>Now our architecture becomes like this</p>
+
+<p><img src="webasm/arch-2.png" alt="Architecture" title="Lekh App Architecture" /></p>
+
+<p> </p>
+
+<p>The Lekh Board uses HTML canvas for drawings. The glue code has logic to call the HTML canvas API. The glue code also exposes some of the C++ code into javascript using <a href="https://emscripten.org/docs/porting/connecting_cpp_and_javascript/embind.html">embind</a>.</p>
+
+<p> </p>
+
+<h2 id="debugging">Debugging</h2>
+<p>The Google Chrome team put out a <a href="https://developer.chrome.com/blog/wasm-debugging-2020/">blog post</a> describing how to debug the web assembly in Google Chrome. Unfortunately, I was not able to get it working. The example there is for a very simple C++ code. In our case, we have a mix of C++ and C Code. Actually, we have written our code only in C++ but we also embed <a href="https://www.lua.org/">Lua</a> which is written in C. We compile separately and produce bit code and then use emcc again to link them together. I followed the instructions given by the Chrome team, but that did not work.</p>
+
+<p>So for the debugging the only thing that we could do was to use console.log() from the glue code.</p>
+
+<p> </p>
+
+<h2 id="performance">Performance:</h2>
+<p>Here is a simple shape recognition benchmark. In this benchmark, I am calling shape recognizer 1000 times for same set of points which are recognized as a circle.</p>
+
+<p>Here is pseudo code for the benchmark</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void benchmark() {
+  auto rawPoints = getPointsForCircle();
+  auto t1 = get_cur_time();
+  for (int i = 0; i &lt; 1000; i++) {
+    Recognizer recognizer;
+    recognizer.recognize(&amp;rawPoints);
+  }
+ auto t2 = get_cur_time();
+ cout &lt;&lt; t2 - t1;
+}
+</code></pre></div></div>
+
+<p> </p>
+
+<p>The shape recognition algorithm is single threaded only. Also there is no IO or any syscall so it is purely CPU intensive task.</p>
+
+<p>The benchmark code was run on OS X as native binary (compiled with clang) and then as web assembly in Firefox and Google chrome.</p>
+
+<p> </p>
+
+<h3 id="configuration">Configuration</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Version/ Detail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>OS</td>
+      <td>macOS Big Sur 11.3.1</td>
+    </tr>
+    <tr>
+      <td>Hardware</td>
+      <td>MacBook Pro (15-inch, 2018) 2.9 GHz 6-Core Intel Core i9</td>
+    </tr>
+    <tr>
+      <td>Clang</td>
+      <td>Apple clang version 12.0.5 (clang-1205.0.22.9)</td>
+    </tr>
+    <tr>
+      <td>Emcc</td>
+      <td>emcc (Emscripten gcc/clang-like replacement) 1.38.30</td>
+    </tr>
+    <tr>
+      <td>Firefox</td>
+      <td>92.0.1 (64-bit)</td>
+    </tr>
+    <tr>
+      <td>Chrome</td>
+      <td>Version 94.0.4606.71 (Official Build) (x86_64)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p> </p>
+
+<h2 id="native-run">Native run</h2>
+
+<p>The native binary was compiled with -O2 optimization flag. The benchmark code was run 5 times and and it took average of <strong>2955</strong> milliseconds. So every shape recognition call took around 2.9 ms</p>
+
+<p> </p>
+
+<h2 id="web-assembly-run">Web Assembly run</h2>
+
+<p>Here is the result of the web assembly run. The time below is the time taken to execute the above benchmark code while running as web assembly. The percent number is the execution speed relative to the native speed.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Optimization Flag</th>
+      <th>No Flag</th>
+      <th>-O2</th>
+      <th>-Oz</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Firefox</td>
+      <td>6302 ms (46.88%)</td>
+      <td>19231 ms (15.36%)</td>
+      <td>3771 ms (78.36%)</td>
+    </tr>
+    <tr>
+      <td>Google Chrome</td>
+      <td>28190 ms (10.48%)</td>
+      <td>4619 ms (63.97%)</td>
+      <td>6746 ms (43.80%)</td>
+    </tr>
+    <tr>
+      <td>Binary Size</td>
+      <td>5.44M</td>
+      <td>1.48M</td>
+      <td>1.04M</td>
+    </tr>
+  </tbody>
+</table>
+
+<p> </p>
+
+<p>The fastest speed we could achieve was 78.36% of the native speed while running in Firefox. I guess the Firefox could do even better with the -O2 flag but in this case the Firefox is behaving strangely. I repeated the run many times (with -O2) assuming I made some mistake, but got the same result every time. Probably some temporary issues with Firefox which I think should be fixed in future releases.</p>
+
+<p>But in general, the Firefox seems to be much more performant than Google chrome in executing the web assembly.</p>
+
+<p> </p>
+
+<p>We are using the -Oz optimization flag in our build process. With this we get our  wasm file ~1M. But the network transfer, with gzip encoding, is even less ~340 KB. This is amazing!!</p>
+
+<p> </p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Web assembly is quite ready for the production use cases. We tested the Lekh Board on browsers in Android, iOS, Windows, Mac and Linux and it seems all the major browsers on these platforms support web assembly.</p>
+
+<p>Firfox performs much better than Chrome in executing the same web assembly.</p>
+
+<p> </p>
+
+</div>
 </main>
+<br/>
 
 </div>
 </div>
