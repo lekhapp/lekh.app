@@ -164,6 +164,8 @@ img, video { height: auto; max-width: 100%; }
 
 .hidden { display: none; }
 
+.h-16 { height: 4rem; }
+
 .h-40 { height: 10rem; }
 
 .h-full { height: 100%; }
@@ -173,8 +175,6 @@ img, video { height: auto; max-width: 100%; }
 .h-30vh { height: 30vh; }
 
 .min-h-screen { min-height: 100vh; }
-
-.w-28 { width: 7rem; }
 
 .w-32 { width: 8rem; }
 
@@ -317,6 +317,8 @@ img, video { height: auto; max-width: 100%; }
 .font-medium { font-weight: 500; }
 
 .font-semibold { font-weight: 600; }
+
+.font-bold { font-weight: 700; }
 
 .italic { font-style: italic; }
 
